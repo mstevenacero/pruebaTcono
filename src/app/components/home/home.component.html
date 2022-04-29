@@ -1,0 +1,58 @@
+<app-header></app-header>
+<body>
+    <div>
+        <div class="row" id="nav">
+            <div class="col">
+                <div class="row" id="list">
+                    <div class="col-1">
+                        <mat-icon id="iconList"> format_list_bulleted</mat-icon>
+                    </div>
+                    <div class="col">
+                        <h3>Lista de tareas</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <input placeholder="Ingresa el id de la tarea" [(ngModel)]="id" id="inputShe" type="text"
+                            style= />
+                    </div>
+                    <div class="col">
+                        <mat-icon (click)="filtroItem()" id="iconLoop">youtube_searched_for</mat-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Mis tareas</th>
+                    <th scope="col">Completada</th>
+                    <th scope="col">Borrar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of data">
+                    <th scope="row">{{item.id}}</th>
+                    <td>{{item.title}}</td>
+                    <td>
+                        <div *ngIf="item.state === true">
+                            <mat-icon (click)="updateItem(item,false)">check_box</mat-icon>
+                        </div>
+                        <div *ngIf="item.state !== true">
+                            <mat-icon (click)="updateItem(item,true)">crop_din</mat-icon>
+                        </div>
+                    </td>
+                    <td>
+                        <mat-icon (click)="deleteItem(item.id)">remove_circle</mat-icon>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a
+            href="https://stackoverflow.com/questions/52918482/how-to-make-media-query-for-1024-x-600-and-1024-x-768-work-separately"><img
+                id="imagen" src="../../../assets/images/25231.png" alt=""></a>
+    </div>
+</body>

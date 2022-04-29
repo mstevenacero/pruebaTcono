@@ -1,0 +1,32 @@
+<div class="head">
+    <div class="row">
+        <div class="col">
+            <div class="row" id="title">
+                <div class="col-1">
+                    <mat-icon id="add">add</mat-icon>
+                </div>
+                <div class="col">
+                    <h4>GUARDAR TAREA</h4>
+                </div>
+            </div>
+            <mat-form-field class="input">
+                <mat-label>Titulo</mat-label>
+                <input [(ngModel)]="send.title" matInput>
+            </mat-form-field>
+        </div>
+        <div class="col">
+            <label id="labelCheck">Tarea completada<input id="box" type="checkbox" [(ngModel)]="send.state"
+                    value="true"></label>
+        </div>
+        <div class="col">
+            <div class="row" id="circule" (click)="sendApi()">
+                <div class="col-3">
+                    <mat-icon id="add">add</mat-icon>
+                </div>
+                <div class="col">
+                    <h4>GUARDAR TAREA</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
